@@ -30,6 +30,9 @@ public class UserService {
     public UserResponseDTO createUser(UserRequestDTO dto) {
         User user = new User();
 
+        // Adicionar "E-mail já utilizado"
+        // Adicionar "Telefone já utilizado"
+
         user.setName(dto.name());
         user.setEmail(dto.email());
         user.setPhone(dto.phone());
@@ -51,6 +54,10 @@ public class UserService {
     }
 
     public UserResponseDTO updateUser(UUID id, UserRequestDTO dto) {
+
+        // Adicionar "E-mail já utilizado"
+        // Adicionar "Telefone já utilizado"
+        
         User user = repository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
 
         user.setName(dto.name());
